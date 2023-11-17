@@ -6,8 +6,8 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0 0;
-    color: rgb(218, 218, 218);
-    background-color: rgb(242, 221, 255);
+    color: white;
+    background-color: white;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -31,6 +31,31 @@ body {
     float: left;
     width: 5.5rem;
     margin-top: -15px;
+    transition: all 2s;
+}
+
+.logo:hover {
+    cursor: pointer;
+    animation: left-right 2s ease-in-out;
+}
+
+@keyframes left-right {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    25% {
+        transform: rotate(-45deg)
+    }
+
+
+    75% {
+        transform: rotate(45deg)
+    }
+
+    100% {
+        transform: rotate(0deg)
+    }
 }
 
 svg {
@@ -50,7 +75,7 @@ nav {
 
 .nav-link {
     text-decoration: none;
-    color: rgb(218, 218, 218);
+    color: white;
     /* margin-left: 15px; */
     padding: 5px 5px;
     /* background-color: rgb(3, 105, 3); */
@@ -60,14 +85,22 @@ nav {
 
 .nav-link:hover {
     color: rgb(24, 98, 128);
-    transition: all 300ms ease;
+}
+
+.discover-sg-nav-link {
+    color: white
 }
 
 .selected-nav-link {
     background-color: rgb(24, 98, 128);
 }
 
+.selected-nav-link:hover {
+    color: rgb(240, 240, 240);
+}
+
 section {
+    border-radius: 25px;
     margin: auto auto;
     background-color: rgba(210, 210, 210, 0.5);
     width: 80%;
@@ -90,6 +123,7 @@ section {
 
 article {
     background: rgba(225, 225, 225, 0.5);
+    border-radius: 25px;
     width: 50%;
     margin: 15px 15px;
 }
@@ -105,10 +139,22 @@ article p {
     color: rgb(72, 72, 72);
 }
 
+.article-image {
+    border-radius: 25px 25px 0px 0px;
+    overflow: hidden;
+    width: 100%;
+    height: 50%;
+}
+
 article img {
-    padding-top: 15px;
-    width: 90%;
-    height: 150px;
+    transition: 300ms all ease-in-out;
+    width: 100%;
+    height: 100%;
+}
+
+article img:hover {
+    cursor: pointer;
+    transform: scale(1.5);
 }
 
 footer {
@@ -120,12 +166,101 @@ footer {
 }
 
 .article-link {
-    float: right;
-    margin-right: 10px;
+    /* float: right; */
+    /* margin-right: 10px; */
+    /* text-align: center; */
+    width: auto;
+    position: absolute;
+    text-align: center;
+    bottom: 15px;
+    transform: translate(-50%, -50%);
     text-decoration: none;
     color: rgb(24, 98, 128);
 }
 
+.tour-link {
+    background: rgb(24, 98, 128);
+    width: auto;
+    position: absolute;
+    text-align: center;
+    bottom: 15px;
+    padding: 10px 24px;
+    border-radius: 15px;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
+    color: white;
+    transition: all 200ms ease-in-out;
+}
+
+.tour-link:hover {
+    font-size: larger;
+    font-weight: bold;
+}
+
 .article-link:hover {
     text-decoration: underline;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+.dropdown-content {
+    transform: translateY(-350%);
+    position: absolute;
+    background-color: rgb(24, 98, 128);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 15px;
+    transition: all 300ms ease;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 3px solid rgb(16, 65, 85);
+    text-align: center;
+    transition: font-size 50ms ease-out;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    font-size: larger;
+}
+
+.dropdown:hover .dropdown-content {
+    /* display: block; */
+    transform: translateY(0);
+    transition: all 200ms ease;
+}
+
+.package-tour-image {
+    padding-top: 15px;
+    padding-left: 15px;
+    border-radius: 25px 25px 25px 25px;
+    overflow: hidden;
+    width: 50%;
+    height: 10%;
+}
+
+.package-tour-article {
+    background: none;
+}
+
+.feedback-select {
+    color: rgb(24, 98, 128);
+    border-radius: 10px;
+    text-decoration: none;
+    width: 35%;
+    padding: 12px 0;
+    text-align: center;
+    font-size: large;
+    border: none;
 }
